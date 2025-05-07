@@ -15,7 +15,11 @@ export default function Register() {
         e.preventDefault();
         try {
             console.log(form)
-            await axios.post("https://gestor-gastos.onrender.com/api/auth/register", form);
+            await axios.post("https://gestor-gastos.onrender.com/api/auth/register", form,
+                {
+                    withCredentials: true
+                }
+            );
             navigate("/login");
         } catch (err) {
             console.error(err);

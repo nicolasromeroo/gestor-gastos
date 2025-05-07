@@ -27,6 +27,7 @@ export default function Dashboard() {
             axios
                 .get("https://gestor-gastos.onrender.com/api/sueldos/getSueldos", {
                     headers: { Authorization: `Bearer ${token}` },
+                    withCredentials: true
                 })
                 .then((res) => {
                     console.log("Sueldos recibidos:", res.data);
@@ -106,6 +107,7 @@ export default function Dashboard() {
             try {
                 const response = await axios.get(`http://localhost:8080/api/gastos/getGasto/${userId}`, {
                     headers: { Authorization: `Bearer ${token}` },
+                    withCredentials: true
                 });
 
                 const gastos = response.data;

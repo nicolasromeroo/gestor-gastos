@@ -22,6 +22,9 @@ export default function Logout() {
                 {},
                 {
                     headers: { Authorization: `Bearer ${token}` }
+                },
+                {
+                    withCredentials: true
                 }
             );
 

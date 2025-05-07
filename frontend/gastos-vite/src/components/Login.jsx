@@ -15,7 +15,10 @@ export default function Login() {
             const res = await axios.post("https://gestor-gastos.onrender.com/api/auth/login", {
                 username,
                 password,
-            });
+            },
+                {
+                    withCredentials: true
+                });
 
             const { token, id } = res.data;
 

@@ -32,6 +32,7 @@ export default function Gastos({ gastos = [], setGastos, sueldoDelMesActual, tok
         axios
             .get(`https://gestor-gastos.onrender.com/api/gastos/getGasto/${userId}`, {
                 headers: { Authorization: `Bearer ${token}` },
+                withCredentials: true
             })
             .then((res) => {
                 console.log("Respuesta cruda gastos:", res.data);
@@ -91,6 +92,7 @@ export default function Gastos({ gastos = [], setGastos, sueldoDelMesActual, tok
         axios
             .post("https://gestor-gastos.onrender.com/api/gastos/addGasto", nuevoGastoObj, {
                 headers: { Authorization: `Bearer ${token}` },
+                withCredentials: true
             })
             .then((res) => {
                 const gastoGuardado = {
