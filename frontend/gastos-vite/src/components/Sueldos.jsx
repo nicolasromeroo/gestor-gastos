@@ -28,7 +28,7 @@ export default function Sueldo() {
 
     const obtenerSueldos = (token) => {
         axios
-            .get("http://localhost:8080/api/sueldos/getSueldos", {
+            .get("https://gestor-gastos.onrender.com/api/sueldos/getSueldos", {
                 headers: { Authorization: `Bearer ${token}` },
             })
             .then((res) => setSueldos(res.data))
@@ -50,7 +50,7 @@ export default function Sueldo() {
 
         axios
             .post(
-                "http://localhost:8080/api/sueldos/addSueldo",
+                "https://gestor-gastos.onrender.com/api/sueldos/addSueldo",
                 { monto, mes, usuarioId },
                 { headers: { Authorization: `Bearer ${token}` } }
             )
@@ -91,7 +91,7 @@ export default function Sueldo() {
         }).then((result) => {
             if (result.isConfirmed) {
                 axios
-                    .delete(`http://localhost:8080/api/sueldos/deleteSueldo/${id}`, {
+                    .delete(`https://gestor-gastos.onrender.com/api/sueldos/deleteSueldo/${id}`, {
                         headers: { Authorization: `Bearer ${token}` },
                     })
                     .then(() => {

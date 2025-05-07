@@ -15,7 +15,7 @@ export default function Register() {
         e.preventDefault();
         try {
             console.log(form)
-            await axios.post("http://localhost:8080/api/auth/register", form);
+            await axios.post("https://gestor-gastos.onrender.com/api/auth/register", form);
             navigate("/login");
         } catch (err) {
             console.error(err);

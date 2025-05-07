@@ -12,7 +12,7 @@ export default function Login() {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post("http://localhost:8080/api/auth/login", {
+            const res = await axios.post("https://gestor-gastos.onrender.com/api/auth/login", {
                 username,
                 password,
             });

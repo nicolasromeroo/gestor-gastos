@@ -30,7 +30,7 @@ export default function Gastos({ gastos = [], setGastos, sueldoDelMesActual, tok
         console.log("User ID:", userId);
 
         axios
-            .get(`http://localhost:8080/api/gastos/getGasto/${userId}`, {
+            .get(`https://gestor-gastos.onrender.com/api/gastos/getGasto/${userId}`, {
                 headers: { Authorization: `Bearer ${token}` },
             })
             .then((res) => {
@@ -89,7 +89,7 @@ export default function Gastos({ gastos = [], setGastos, sueldoDelMesActual, tok
         };
 
         axios
-            .post("http://localhost:8080/api/gastos/addGasto", nuevoGastoObj, {
+            .post("https://gestor-gastos.onrender.com/api/gastos/addGasto", nuevoGastoObj, {
                 headers: { Authorization: `Bearer ${token}` },
             })
             .then((res) => {
@@ -120,7 +120,7 @@ export default function Gastos({ gastos = [], setGastos, sueldoDelMesActual, tok
 
     // eliminar gasto
     const eliminarGasto = (id) => {
-        fetch(`http://localhost:8080/api/gastos/deleteGasto/${id}`, {
+        fetch(`https://gestor-gastos.onrender.com/api/gastos/deleteGasto/${id}`, {
             method: "DELETE",
         }).then(() => {
             setGastos((prev) => prev.filter((g) => g._id !== id));
@@ -128,7 +128,7 @@ export default function Gastos({ gastos = [], setGastos, sueldoDelMesActual, tok
     };
 
     const editarGasto = (id, datosActualizados) => {
-        fetch(`http://localhost:8080/api/gastos/updateGasto/${id}`, {
+        fetch(`https://gestor-gastos.onrender.com/api/gastos/updateGasto/${id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(datosActualizados),

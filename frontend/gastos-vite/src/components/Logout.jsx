@@ -18,7 +18,7 @@ export default function Logout() {
 
         try {
             const response = await axios.post(
-                "http://localhost:8080/api/auth/logout",
+                "https://gestor-gastos.onrender.com/api/auth/logout",
                 {},
                 {
                     headers: { Authorization: `Bearer ${token}` }

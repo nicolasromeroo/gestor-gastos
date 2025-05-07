@@ -25,7 +25,7 @@ export default function Dashboard() {
     useEffect(() => {
         if (token && userId) {
             axios
-                .get("http://localhost:8080/api/sueldos/getSueldos", {
+                .get("https://gestor-gastos.onrender.com/api/sueldos/getSueldos", {
                     headers: { Authorization: `Bearer ${token}` },
                 })
                 .then((res) => {
