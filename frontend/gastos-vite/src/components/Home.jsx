@@ -27,7 +27,7 @@ export default function Home() {
                     loop
                 />
             </h1>
-            <p className="text-lg mb-8">Organiza tus sueldos, gastos y estadísticas en un solo lugar.</p>
+            <p className="text-lg mb-8">Organizá tus sueldos, gastos y estadísticas en un solo lugar.</p>
 
             <div className="flex justify-center gap-4">
                 <Link to="/login">
